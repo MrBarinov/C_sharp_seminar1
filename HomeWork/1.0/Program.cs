@@ -13,5 +13,5 @@ int max = num1;
 
 if(num2 > max) max = num2;
 
-Console.Write("max = ");
+Console.Write("Максимальное = ");
 Console.WriteLine(max);
