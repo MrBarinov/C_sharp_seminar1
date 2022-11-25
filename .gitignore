@@ -6,6 +6,7 @@
 .vscode/*
 bin/
 obj/
+.DS_Store
 
 # User-specific files
 *.rsuser
