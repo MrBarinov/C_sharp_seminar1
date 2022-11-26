@@ -8,8 +8,14 @@ Console.Write("Введите число 2: ");
 int num2 = int.Parse(Console.ReadLine());
 
 int max = num1;
+int min = num2;
 
-if(num2 > max) max = num2;
-
+if(num2 > max)
+{
+    max = num2;
+    min = num1;
+}
 Console.Write("Максимальное = ");
 Console.WriteLine(max);
+Console.Write("Минимальное = ");
+Console.WriteLine(min);
