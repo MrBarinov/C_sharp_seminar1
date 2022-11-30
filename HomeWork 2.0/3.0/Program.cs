@@ -2,12 +2,16 @@
 // заданного числа или сообщает, что третьей цифры нет.
 
 string Num(int num)
-{
-    if (num < 99)
-        return "Третьей цифры нет";            
 
-    else 
-        return $"Третья цифра - {num % 10}";
+{
+    while (num > 999)
+        num = num / 10;
+
+        if (num < 99)
+            return "Третьей цифры нет";            
+        
+        else 
+            return $"Третья цифра - {num % 10}";
 }
 
 Console.WriteLine("Введите число: ");
