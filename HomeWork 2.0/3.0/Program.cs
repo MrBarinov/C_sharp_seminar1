@@ -4,10 +4,7 @@
 string Num(int num)
 {
     if (num < 99)
-        return "Третьей цифры нет";
-
-    if (num > 999)
-        return "Erorr";
+        return "Третьей цифры нет";            
 
     else 
         return $"Третья цифра - {num % 10}";
