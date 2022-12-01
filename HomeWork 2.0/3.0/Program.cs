@@ -5,7 +5,7 @@ string Num(int num)
 
 {
     while (num > 999)
-        num = num / 10;
+    num = num / 10;
 
         if (num < 99)
             return "Третьей цифры нет";            
