@@ -2,27 +2,25 @@
 //принимает на вход число (N) и выдаёт таблицу
 //квадратов чисел от 1 до N
 
-void Chet(int N)
+void Square(int N)
 {
     int i = 0;
-    double pere;
+    double num;
     while (i < N)
     {
         i += 1;
         if (i == (N))
         {
-            pere = Math.Pow(i, 2);
-            Console.Write($"{pere}");
+            num = Math.Pow(i, 2);
+            Console.Write($"{num}");
         }
         else
         {
-
-            pere = Math.Pow(i, 2);
-            Console.Write($"{pere},");
+            num = Math.Pow(i, 2);
+            Console.Write($"{num},");
         }
     }
-
 }
 Console.WriteLine("введите ч");
 int chislo = int.Parse(Console.ReadLine());
-Chet(chislo);
+Square(chislo);
