@@ -17,14 +17,14 @@ void MassivPrint(int[] c)
 {
     int count = c.Length;
     int pos = 0;
-    Console.Write("[ ");
+    Console.Write("[");
     while (pos < count)
     {
-        Console.Write($"{c[pos]} ");
+        Console.Write($"{c[pos]}");
         pos++;
         if (pos < count)
         {
-            Console.Write(",");
+            Console.Write(", ");
         }
     }
     Console.Write("]");
