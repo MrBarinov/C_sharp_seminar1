@@ -27,4 +27,6 @@ void Chet(int[] arr)
         if (arr[i] % 2 == 0)
         num++;
 }
-
+int[] arr = Mass(int.Parse(Console.ReadLine()));
+Print(arr);
+Console.WriteLine(Chet(arr));
