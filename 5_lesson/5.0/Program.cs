@@ -40,6 +40,6 @@ void SumPosNeg(int[] arr)
 
 int[] arr_1 = MassNums(int.Parse(Console.ReadLine()),
                        int.Parse(Console.ReadLine()),
-                       int.Parse(Console.ReadLine()));
+                    int.Parse(Console.ReadLine()));
 Print(arr_1);
 SumPosNeg(arr_1);
