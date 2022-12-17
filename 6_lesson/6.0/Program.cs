@@ -1,30 +1,38 @@
 ﻿// 1. Напишите программу, которая перевернёт одномерный массив
 // (последний элемент будет на первом месте, а первый - на последнем и т.д.)
 
-void MassivFill(int[] a)
+void Print(int[] arr)
 {
-    int Lenght = a.Length;
-    int i = 0;
-    while (i < Lenght)
-    {
-        a[i] = new Random().Next(1, 100);
-        i++;
-    }
+int size = arr.Length;
+
+for (int i = 0; i < size; i++)
+Console.Write($"{arr[i]} ");
+Console.WriteLine();
 }
 
-void MassivPrint(int[] c)
+int[] MassNums(int size, int from, int to)
 {
-    int count = c.Length;
-    int pos = 0;
-    Console.Write("[");
-    while (pos < count)
-    {
-        Console.Write($"{c[pos]}");
-        pos++;
-        if (pos < count)
-        {
-            Console.Write(", ");
-        }
-    }
-    Console.Write("]");
+int[] arr = new int[size];
+
+for (int i = 0; i < size; i++)
+arr[i] = new Random().Next(from, to);
+
+return arr;
 }
+
+void RevMas(int[] arr_1)
+{
+int size = arr_1.Length;
+
+for (int i = 0; i < size / 2; i++)
+(arr_1[i], arr_1[size - i - 1]) = (arr_1[size - i - 1], arr_1[i]);
+}
+
+
+
+int[] arr_1 = MassNums(int.Parse(Console.ReadLine()),
+int.Parse(Console.ReadLine()),
+int.Parse(Console.ReadLine()));
+Print(arr_1);
+RevMas(arr_1);
+Print(arr_1);
