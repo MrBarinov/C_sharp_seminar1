@@ -19,4 +19,4 @@ int CountNum(int m)
     return count;
 }
 
-Console.WriteLine($"Чила больше 0: {CountNum(n)}");
+Console.WriteLine($"Чиcла больше 0: {CountNum(n)}");
