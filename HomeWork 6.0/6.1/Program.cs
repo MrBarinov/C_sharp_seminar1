@@ -15,9 +15,7 @@ void Intersection(double b1, double k1, double b2, double k2)
     }
     else if (a == 0)
         Console.WriteLine($"Значение k1 и k2 не должны быть одинаковы");
-
 }
-
 Intersection(int.Parse(Console.ReadLine()),
              int.Parse(Console.ReadLine()),
              int.Parse(Console.ReadLine()),
