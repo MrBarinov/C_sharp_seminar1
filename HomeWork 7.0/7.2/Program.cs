@@ -32,19 +32,19 @@ int[,] MassNums(int row, int column)
     return arr;
 }
 
-void Array2(int[,] arr)
+void Average(int[,] arr)
 {
-    int summ = 0;
-    int row_size = arr.GetLength(0);
-    int column_size = arr.GetLength(1);
+    double summ;
+    int row = arr.GetLength(0);
+    int column = arr.GetLength(1);
 
-    for (int i = 0; i < row_size; i++)
-        for (int j = 0; j < column_size; j++)
-        {
-            summ += arr[i, j];
-        }
-    Console.Write($"{summ/4}; ");
-
+    for (int i = 0; i < column; i++)
+    {
+        summ = 0;
+        for (int j = 0; j < row; j++)
+            summ += arr[j, i];
+        Console.Write($"{Math.Round(summ / row, 2)}; ");
+    }
 }
 
 Console.Write("Введите колличество строк: ");
@@ -53,4 +53,4 @@ Console.Write("Введите колличество столбцов: ");
 int column = int.Parse(Console.ReadLine());
 int[,] arr_1 = MassNums(row, column);
 Print(arr_1);
-Array2(arr_1);
+Average(arr_1);
