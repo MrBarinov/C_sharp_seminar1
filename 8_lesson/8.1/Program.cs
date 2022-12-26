@@ -1,2 +1,48 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// 2. Задайте двумерный массив. Напишите программу,
+// которая заменяет строки на столбцы. В случае, если это невозможно,
+// программа должна вывести сообщение для пользователя.
+
+
+void Print(int[,] arr)
+{
+    int row_size = arr.GetLength(0);
+    int column_size = arr.GetLength(1);
+
+    for (int i = 0; i < row_size; i++)
+    {
+        for (int j = 0; j < column_size; j++)
+            Console.Write($" {arr[i, j],4} ");
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+int[,] MassNums(int row, int column)
+{
+    int[,] arr = new int[row, column];
+
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < column; j++)
+            arr[i, j] = new Random().Next(1, 11);
+
+    return arr;
+}
+void NewArr(int[,] arr)
+{
+    int row = arr.GetLength(0);
+    int column = arr.GetLength(1);
+
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < i; j++)
+            (arr[i, j], arr[j, i]) = (arr[j, i], arr[i, j]);
+    }
+}
+Console.Write("Введите колличество строк: ");
+int row = int.Parse(Console.ReadLine());
+Console.Write("Введите колличество столбцов: ");
+int column = int.Parse(Console.ReadLine());
+
+int[,] arr_1 = MassNums(row, column);
+Print(arr_1);
+NewArr(arr_1);
+Print(arr_1);
