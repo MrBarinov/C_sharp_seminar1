@@ -14,13 +14,13 @@ void Print(int[,] arr)
     Console.WriteLine();
 }
 
-int[,] MassNums(int row, int column, int from, int to)
+int[,] MassNums(int row, int column)
 {
     int[,] arr = new int[row, column];
 
     for (int i = 0; i < row; i++)
         for (int j = 0; j < column; j++)
-            arr[i, j] = new Random().Next(from, to);
+            arr[i, j] = new Random().Next(1, 11);
 
     return arr;
 }
@@ -42,18 +42,11 @@ int Summ(int[,] arr)
 }
 
 
-Console.Write("Enter the number of rows: ");
+Console.Write("Введите колличество строк: ");
 int row = int.Parse(Console.ReadLine());
-Console.Write("Enter the number of columns: ");
+Console.Write("Введите колличество столбцов: ");
 int column = int.Parse(Console.ReadLine());
 
-int[,] arr_1 = MassNums(row, column,
-int.Parse(Console.ReadLine()),
-int.Parse(Console.ReadLine()));
-Print(arr_1);
-Console.WriteLine(Summ(arr_1));
-int[,] arr_1 = MassNums(row, column,
-int.Parse(Console.ReadLine()),
-int.Parse(Console.ReadLine()));
+int[,] arr_1 = MassNums(row, column);
 Print(arr_1);
 Console.WriteLine(Summ(arr_1));
