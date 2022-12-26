@@ -1,5 +1,11 @@
-// 4. Задайте двумерный массив. Введите элемент, и найдите первое его вхождение,
-// выведите позиции по горизонтали и вертикали, или напишите, что такого элемента нет.
+﻿//Задайте двумерный массив из целых чисел. 
+//Найдите среднее арифметическое элементов в каждом столбце.
+
+//Например, задан массив:
+//1 4 7 2
+//5 9 2 3
+//8 4 2 4
+//Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
 void Print(int[,] arr)
 {
@@ -25,20 +31,26 @@ int[,] MassNums(int row, int column)
 
     return arr;
 }
-string FindElem(int[,] arr, int findNum)
+
+void Average(int[,] arr)
 {
-    for (int i = 0; i < arr.GetLength(0); i++)
-        for (int j = 0; j < arr.GetLength(1); j++)
-            if (arr[i, j] == findNum)
-                return $"Искомый элемент {findNum} находится на позиции [{i + 1}, {j + 1}]";
-    return $"Искомый элемент {findNum} не найден";
+    double summ;
+    int row = arr.GetLength(0);
+    int column = arr.GetLength(1);
+
+    for (int i = 0; i < column; i++)
+    {
+        summ = 0;
+        for (int j = 0; j < row; j++)
+            summ += arr[j, i];
+        Console.Write($"{Math.Round(summ / row, 2)}; ");
+    }
 }
 
 Console.Write("Введите колличество строк: ");
 int row = int.Parse(Console.ReadLine());
 Console.Write("Введите колличество столбцов: ");
 int column = int.Parse(Console.ReadLine());
-
 int[,] arr_1 = MassNums(row, column);
 Print(arr_1);
-Console.WriteLine(FindElem(arr_1, int.Parse(Console.ReadLine())));
+Average(arr_1);

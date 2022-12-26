@@ -37,16 +37,21 @@ int Summ(int[,] arr)
             {
                 sum += arr[i, j];
             }
-
     }
-
     return sum;
 }
-Maria_Lazareva: Console.Write("Enter the number of rows: ");
+
+
+Console.Write("Enter the number of rows: ");
 int row = int.Parse(Console.ReadLine());
 Console.Write("Enter the number of columns: ");
 int column = int.Parse(Console.ReadLine());
 
+int[,] arr_1 = MassNums(row, column,
+int.Parse(Console.ReadLine()),
+int.Parse(Console.ReadLine()));
+Print(arr_1);
+Console.WriteLine(Summ(arr_1));
 int[,] arr_1 = MassNums(row, column,
 int.Parse(Console.ReadLine()),
 int.Parse(Console.ReadLine()));
