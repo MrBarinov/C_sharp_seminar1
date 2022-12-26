@@ -1,5 +1,4 @@
-﻿// 1. Задайте двумерный массив размером m×n,
-// заполненный случайными целыми числами.
+﻿// 3. Задайте двумерный массив. Найдите сумму элементов главной диагонали.
 
 void Print(int[,] arr)
 {
@@ -13,7 +12,6 @@ void Print(int[,] arr)
         Console.WriteLine();
     }
     Console.WriteLine();
-
 }
 
 int[,] MassNums(int row, int column, int from, int to)
@@ -27,6 +25,23 @@ int[,] MassNums(int row, int column, int from, int to)
     return arr;
 }
 
+int Summ(int[,] arr)
+{
+    int sum = 0;
+    int row = arr.GetLength(0);
+    int column = arr.GetLength(1);
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+            if (i == j)
+            {
+                sum += arr[i, j];
+            }
+    }
+    return sum;
+}
+
+
 Console.Write("Enter the number of rows: ");
 int row = int.Parse(Console.ReadLine());
 Console.Write("Enter the number of columns: ");
@@ -36,3 +51,4 @@ int[,] arr_1 = MassNums(row, column,
 int.Parse(Console.ReadLine()),
 int.Parse(Console.ReadLine()));
 Print(arr_1);
+Console.WriteLine(Summ(arr_1));
