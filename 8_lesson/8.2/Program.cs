@@ -43,6 +43,7 @@ int[] FrequencyDict(int[,] arr)
 
     return freq;
 }
+
 Console.Write("Введите колличество строк: ");
 int row = int.Parse(Console.ReadLine());
 Console.Write("Введите колличество столбцов: ");
